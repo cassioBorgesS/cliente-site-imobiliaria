@@ -1,0 +1,609 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.aceito{
+    background-color: rgba(0, 180, 0,0.5);
+}
+.recusado{
+        background-color: rgba(235, 0, 0,0.5);
+}
+
+
+/* estilo geral */
+
+
+
+li{
+    list-style-type: none;
+}
+input:focus{
+    outline: 0;
+}
+header{
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(32, 32, 32);
+}
+#checkbox{
+    display: none
+}
+#checkbox:checked ~ nav{
+    transform: translateX(0);
+}
+header .botao-menu-hamburguer{
+    z-index: 2;
+    margin: 8px 30px;
+    display: flex;
+    flex-direction: column;
+    width: 60px;
+    height: 37px;
+    justify-content: space-between;
+}
+header .botao-menu-hamburguer span{
+    border-radius: 10px;
+    width: 50px;
+    height: 7px;
+    background-color: gold;
+}
+header nav{
+    transform: translateX(-300px);
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 230px;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: ease 1s;
+}
+header nav ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+header nav ul li{
+    margin: 30px auto;
+}
+header nav ul li a{
+    font-size: 25px;
+    text-decoration: none;
+    color: white;
+}
+header .contatos-header {
+    display: flex;
+    margin-right: 30px;
+}
+header .contatos-header li .img{
+    width: 30px;
+    height: 30px;
+    margin: 0 6px 0 20px;
+    border-radius: 10px;
+}
+header .contatos-header li a{
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+header .contatos-header li a p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+footer{
+    background-color: rgb(32, 32, 32);
+    height: 200px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+footer div {
+    color: white;
+}
+main{
+    margin-top: 58px;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+
+
+/* estilo pagina inicial */
+
+
+
+main .secao-banner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+main .secao-banner .banner{
+    width: 90%;
+    max-width: 950px;
+    margin: 20px 30px;
+}
+main .secao-banner nav{
+    display: flex;
+    justify-content: center;
+}
+main .secao-banner nav .botao-banner{
+    background-color: black;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 10px;
+}
+main .secao-banner nav .checado{
+    background-color: gold;
+    box-shadow: 0 0 5px -1px black;
+}
+main .secao-apresentacao{
+    display: flex;
+    flex-flow: row wrap-reverse;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 60px;
+}
+main .secao-apresentacao:nth-child(even){
+    flex-direction: row-reverse;
+    background-color: rgb(85, 85, 85);
+    color: white;
+}
+main .secao-apresentacao p{
+    width: 300px;
+    font-size: 20px;
+    margin: 30px 0;
+}
+main .secao-apresentacao .imagem-apresentacao{
+    width: 270px;
+    height: 270px;
+    background-color: rgb(96, 0, 160);
+}
+
+
+
+/* estilo pagina imoveis*/
+
+
+
+main .campo-busca-imovel{
+    width: 300px;
+    height: 100vh;
+    left: 0;
+    background-color: rgb(199, 195, 195);
+    border: 1px solid black;
+    position: sticky;
+    top:  0;
+}
+main .campo-busca-imovel form{
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+main .campo-busca-imovel form .item-busca{
+    display: flex;
+    flex-flow: column;
+    margin: 18px;
+    align-items: inherit;
+    text-align: center;
+}
+.item-busca select, .item-busca input[type = text], .item-busca input[type = number]{
+    padding: 5px;
+    border-radius: 15px;
+    font-size: 16px;
+    box-shadow: 0 0 0 0;
+    border: 1px solid black;
+}
+main .imoveis {
+    margin: 0 auto;
+}
+main .imoveis .imovel{
+    background-color: rgb(170, 170, 170);
+    border: 1px solid rgb(32, 32, 32);
+    width: 650px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+}
+main .imoveis .imovel .imagem-imovel{
+    width: 200px;
+    height: 200px;
+    background-color: rgb(96, 0, 160);
+    flex-grow: 3;
+    margin: 0 10px;
+}
+main .imoveis .imovel .lateral-imovel{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 60%;
+    margin: 0 10px;
+    flex-grow: 10;
+}
+main .imoveis .imovel .lateral-imovel .titulo-imovel{
+    flex-grow: 1;
+}
+main .imoveis .imovel .lateral-imovel h3 {
+    font-weight: normal;
+    font-size: 16px;
+    color: rgb(68, 68, 68);
+}
+main .imoveis .imovel .lateral-imovel .preco-imovel{
+    display: flex;
+    align-items: flex-end;
+    flex-grow: 20;
+    margin: 10px 0;
+} 
+main .imoveis .imovel .lateral-imovel .sub-dados-imovel{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+main .imoveis .imovel .lateral-imovel .localizacao-imovel{
+    display: flex;
+    justify-content: flex-start;
+}
+main .imoveis .imovel .dados-imovel li{
+    list-style-type: none
+}
+
+
+
+/* estilo pagina contatos */
+
+
+
+main h1{
+    margin: 60px 0;
+    text-align: center;
+}
+main .fale-conosco-canais{
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    background-color: whitesmoke;
+    border: 1px solid rgb(128, 125, 125);
+    margin: 0 40px;
+}
+main .fale-conosco-canais div{
+    width: 300px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+}
+main .fale-conosco-canais div h2{
+    width: 100%;
+    align-self: flex-start;
+    text-align: center;
+    font-size: 30px;
+    margin: 20px 0;
+    box-shadow: 0 0 0 1px white;
+}
+main .fale-conosco-canais div ul{
+    margin: 10px 0;
+}
+main .fale-conosco-canais div ul li{
+    margin: 10px 0;
+}
+main .fale-conosco-canais div ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+main .fale-conosco-canais div ul li a:hover{
+    color: rgb(68, 68, 68);
+}
+main .fale-conosco-canais div ul li a img{
+    width: 50px;
+    margin-right: 20px;
+    border-radius: 13px;
+}
+main .horario-funcionamento{
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    background-color: whitesmoke;
+    border: 1px solid rgb(128, 125, 125);
+    margin: 0 40px;
+}
+main .horario-funcionamento div table{
+    margin: 25px 0;
+    border-collapse: collapse;
+}
+main .horario-funcionamento div table tr:first-child td{
+    padding: 10px 30px;
+}
+main .horario-funcionamento div table tr:first-child{
+    background-color: rgb(255, 252, 45);
+}
+main .horario-funcionamento div table tr td{
+    padding: 5px 30px;
+    border: 1px solid rgb(170, 170, 170);
+}
+main .mapa{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+main .mapa iframe{
+    width: 90%;
+}
+main .envie-seu-contato{
+    width: 100%;
+    max-width: 800px;
+    margin: 40px;
+}
+main .envie-seu-contato form fieldset{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    text-align: left;
+    margin: 20px 0;
+}
+main .envie-seu-contato form fieldset  .div-principal{
+    width: 50%;
+    min-width: 340px;
+    margin: 20px 0;
+    display: flex;
+    align-items: baseline;
+    flex-direction: column;
+    flex-grow: 1;
+}
+main .envie-seu-contato form fieldset  .div-principal input{
+    font-size: 17px;
+    padding: 8px 10px;
+    width: 85%;
+    border: 0;
+    box-shadow: 0 0 10px -1px;
+    border-radius: 20px;
+    margin: 4px auto;
+}
+main .envie-seu-contato form fieldset  .div-principal input:focus{
+    background: rgba(255,215,0,0.5);
+}
+main .envie-seu-contato form fieldset button{
+    width: 150px;
+    flex-grow: 1;
+    border: 0;
+    border-radius: 25px;
+    margin: 0 auto;
+    background-color: gold;
+    padding: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+main .envie-seu-contato form fieldset button:hover{
+    background-color: rgba(255,215,0,0.8);
+}
+main .envie-seu-contato form fieldset  .div-principal .aceito{
+    background: rgba(0,181,36,0.8);
+    box-shadow: 0 0 12px 2px rgba(0,181,36,0.8);
+    text-align: center;
+    width: 90%;
+    font-size: 22px;
+    border-radius: 25px;
+    margin: 0 auto;
+}
+main .envie-seu-contato form fieldset  .div-principal .rejeitado {
+    background: rgba(181, 0, 0, 0.8);
+    box-shadow: 0 0 12px 2px rgba(181,0,0,0.8);
+    text-align: center;
+    width: 90%;
+    font-size: 22px;
+    border-radius: 25px;
+    margin: 0 auto;
+}
+
+
+
+/* estilo pagina imoveis/query */
+
+
+
+main .imovel-anuncio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+}
+main .imovel-anuncio .titulo-anuncio{
+    font-size: 35px;
+}
+main .imovel-anuncio .imagens-anuncio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 660px;
+    height: 300px;
+    background: rgba(70, 50, 50, 0.2);
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+main .imovel-anuncio .imagens-anuncio .imagem-maior{
+    max-width: 500px;
+    max-height: 300px;
+}
+main .imovel-anuncio .imagens-anuncio .imagens-menores{
+    margin: 0 15px;
+    width: 100px;
+    height: 300px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    overflow-y : scroll;
+    background: rgba(0, 0, 0, 0.3);
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-radius: 5px;
+}
+main .imovel-anuncio .imagens-anuncio .imagens-menores img{
+    width: 70px;
+    margin: 5px auto;
+}
+main .imovel-anuncio .detalhes-imovel{
+    display: flex;
+    flex-direction: column;
+    width: 660px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+main .imovel-anuncio .detalhes-imovel .preco-anuncio{
+    display: flex;
+    font-weight: bold;
+    font-size: 24px;
+    margin: 10px 0 15px 0;
+}
+main .imovel-anuncio .detalhes-imovel .preco-anuncio p{
+    text-indent: 15px;
+}
+main .imovel-anuncio .detalhes-imovel .info-gerais-anuncio{
+    display: flex;
+    margin: 2px 0;
+}
+main .imovel-anuncio .detalhes-imovel .info-gerais-anuncio p{
+    text-indent: 10px;
+}
+main .imovel-anuncio .detalhes-imovel .detalhes-anuncio{
+    margin-top: 20px;
+}
+main .imovel-anuncio .detalhes-imovel .detalhes-anuncio p {
+    margin: 10px 0;
+    padding: 20px 10px;
+    background: rgba(0,0,0,0.1);
+    border: 2px solid rgba(0,0,0,0.8);
+    border-radius: 10px;
+}
+
+
+
+/* estilo pagina login */
+
+
+
+.main-login{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+}
+.main-login form{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0,0,0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    border-top: solid 2px rgba(0,0,0, 0.3);
+    border-left: solid 2px rgba(0,0,0, 0.3);
+}
+.main-login form input{
+    border-radius: 25px;
+    font-size: 18px;
+    width: 250px;
+    border: 0;
+    margin: 5px 0;
+    padding: 8px 10px;
+    box-shadow: 0 0 15px -5px;
+}
+.main-login form button{
+    border: 0;
+    font-size: 20px;
+    padding: 9px;
+    margin: 20px 0 0 0;
+    background-color: gold;
+    color: white;
+    text-shadow: 0 0 5px black;
+}
+.main-login form button:hover{
+    background-color: rgba(255, 215, 0,0.7);
+}
+
+
+
+/*  viewports  */
+
+
+
+@media screen and (max-width: 700px){
+    main .secao-apresentacao{
+        padding: 20px;
+    }
+
+    main .mapa iframe{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 450px){
+    header .contatos-header li a p{
+        width: 60px;
+    }
+}
+
+
+
+/*  animações   */
+
+
+
+.flex{
+    width: 70px;
+    height: 30px;
+    margin: 40px auto;
+    display: flex;
+    justify-content: space-around;
+}
+.loading{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color:rgb(0, 0, 0);
+    border-radius: 50%;
+    animation: loading 1s infinite;
+}
+.loading:nth-child(2){
+    animation-delay: 0.2s;
+}
+.loading:nth-child(1){
+    animation-delay: 0.3s;
+}
+.botao-color{
+    background-color: gold;
+}
+
+
+@keyframes loading{
+    25%{transform: translateY(10px)}
+    75%{transform: translateY(-10px)}
+}

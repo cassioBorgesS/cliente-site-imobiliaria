@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Borges & Borges</title>
+    <!-- Facebook Pixel Code -->
+    <script src="../js/pixel.js"></script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1886272118215815&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
+       
+</head>
+<body>
+    <header>
+        <input type="checkbox" id="checkbox">
+        <nav>
+            <ul>
+                <li><a href="../">home</a></li>
+                <li><a href="../#sobre">sobre nos</a></li>
+                <li><a href="./">contato</a></li>
+            </ul>
+        </nav>
+        <label for="checkbox" class="botao-menu-hamburguer">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="contatos-header">
+            <li>
+                <a href="https://wa.me/5561982309574">
+                    <img class="img" src="../imagens/whatsapp.png" alt="whatsapp"> 
+                    <p>61 9 8230-9574</p> 
+                </a>
+            </li>
+            <li>
+                <a href="https://wa.me/5561999914060">
+                    <img class="img" src="../imagens/whatsapp.png" alt="whatsapp"> 
+                    <p>61 9 9991-4060</p> 
+                </a>
+            </li>
+        </ul>
+    </header>
+    <main style="align-items: center; padding: 0 10px;">
+
+
+        <h1>Entre em contato por um de nossos canais</h1>
+        <section class="fale-conosco-canais">
+            <div>
+                <h2>Nossos canais</h2>
+                <ul>
+                    <li>
+                        <a href="tel:556132027942">
+                            <img src="../imagens/telefone.png" alt="">
+                            (61) 3202 7942
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://instagram.com">
+                            <img src="../imagens/instagram.png" alt="instagram">
+                            borges_e_borges_imob
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://facebook.com/Borges-Borges-108553801302642">
+                            <img src="../imagens/facebook.png" alt="facebook">
+                            Borges & Borges
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.olx.com.br/perfil/borges-and-borges-25789e2c">
+                            <img src="../imagens/olx.png" alt="olx">
+                            Borges & Borges
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <h1>Envie-nos seu contato</h1>
+        <section class="envie-seu-contato">
+            <div>
+                <form>
+                    <fieldset>
+                        <div class="div-principal">
+                            <input type="text" name="" id="nome-para-contato" placeholder="nome" autocomplete="on">
+                            <input type="tel" name="" id="telefone-para-contato" placeholder="telefone" autocomplete="on">
+                            <input type="email" name="" id="email-para-contato" placeholder="e-mail" autocomplete="on">
+                        </div>
+                        <div class="div-principal" id="charge">
+                            <button type="submit" onclick="controlador.adicionaCliente(event)">Enviar</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+
+        <h1>Horário de funcionamento</h1>
+        <section class="horario-funcionamento">
+            <div>
+                <table>
+                    <tr>
+                        <td>Dias da semana</td>
+                        <td>Horário</td>
+                    </tr>
+                    <tr>
+                        <td>segunda</td>
+                        <td>08:00 - 18:00</td>
+                    </tr>
+                    <tr>
+                        <td>terça</td>
+                        <td>08:00 - 18:00</td>
+                    </tr>
+                    <tr>
+                        <td>quarta</td>
+                        <td>08:00 - 18:00</td>
+                    </tr>
+                    <tr>
+                        <td>quinta</td>
+                        <td>08:00 - 18:00</td>
+                    </tr>
+                    <tr>
+                        <td>sexta</td>
+                        <td>08:00 - 17:00</td>
+                    </tr>
+                    <tr>
+                        <td>sabado</td>
+                        <td>fechado</td>
+                    </tr>
+                    <tr>
+                        <td>domingo</td>
+                        <td>fechado</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <h1>Nossa localização</h1>
+        <section class="mapa">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3837.7018896521167!2d-48.06909108572051!3d-15.872257929102028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a2dd932459d19%3A0xb876892b1fd52ab9!2sBorges%20e%20Borges%20imobiliaria%20e%20correspondente%20bancario!5e0!3m2!1spt-BR!2sbr!4v1615410896906!5m2!1spt-BR!2sbr" height="450" style="border:0;" allowfullscreen="" loading="lazy">Seu navegador não possue suporte para a tag iframe</iframe>
+        </section>
+    </main>
+    <footer>
+        <div>Borges & Borges 2021 &#169; todos os direitos reservados</div>
+    </footer>
+    <script src="../js/modelo/Cliente.js"></script>
+    <script src="../js/view/ClienteView.js"></script>
+    <script src="../js/controlador/ClienteController.js"></script>
+    <script> 
+        let controlador = new ClienteController()
+    </script>
+</body>
+</html>

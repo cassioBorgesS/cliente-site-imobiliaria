@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Facebook Pixel Code -->
+    <script src="js/pixel.js"></script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1886272118215815&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
+</head>
+<body>
+    <header>
+        <input type="checkbox" id="checkbox">
+        <nav>
+            <ul>
+                <li><a href="./">home</a></li>
+                <li><a href="./#sobre">sobre nos</a></li>
+                <li><a href="./contato">contato</a></li>
+            </ul>
+        </nav>
+        <label for="checkbox" class="botao-menu-hamburguer">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul class="contatos-header">
+            <li>
+                <a href="https://wa.me/5561982309574">
+                    <img class="img" src="../imagens/whatsapp.png" alt="whatsapp"> 
+                    <p>61 9 8230-9574</p> 
+                </a>
+            </li>
+            <li>
+                <a href="https://wa.me/5561999914060">
+                    <img class="img" src="../imagens/whatsapp.png" alt="whatsapp"> 
+                    <p>61 9 9991-4060</p> 
+                </a>
+            </li>
+        </ul>
+    </header>
+    <main>
+        <section class="secao-banner">
+            <img class="banner" src="imagens/background.png">
+            <nav id="nav-banner">
+                <div class="botao-banner checado" id="um" onclick="mudaBanner(event)"></div>
+                <div class="botao-banner" id="dois" onclick="mudaBanner(event)"></div>
+                <div class="botao-banner" id="tres" onclick="mudaBanner(event)"></div>
+                <div class="botao-banner" id="quatro" onclick="mudaBanner(event)"></div>
+            </nav>
+        </section>
+        <section class="secao-apresentacao" id="sobre">
+            <p>A Borges & Borges é um escritório familiar, fundada por tio e sobrinho, tem como um de seus fundamentos a família, buscando com diligencia e dedicação os melhores imóveis para atender as necessidades da sua família.</p>
+            <img class="imagem-apresentacao">
+        </section>
+        <section class="secao-apresentacao">
+            <p>Sempre buscamos os melhores preços da região para atender não só quem tem o capital como também quem procura algo mais em conta</p>
+            <img class="imagem-apresentacao">
+        </section>
+        <section class="secao-apresentacao">
+            <p>Temos o melhor correspondente bancário da região, trabalhamos em parceria com a caixa para fornecer um serviço de excelência. </p>
+            <img class="imagem-apresentacao">
+        </section>
+        <section class="secao-apresentacao">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit ipsa quod deleniti reiciendis voluptatem ex dolor similique velit rerum ipsum accusantium at, et vero dolore placeat explicabo corporis, dolores vel.</p>
+            <img class="imagem-apresentacao">
+        </section>
+    </main>
+    <footer>
+        <div>Borges & Borges 2021 &#169; todos os direitos reservados</div>
+    </footer>
+    <script src="js/view.js"></script>
+</body>
+</html>
