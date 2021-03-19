@@ -40,7 +40,7 @@ class ClienteController{
             body: raw
         }
         
-        fetch("api-imobiliaria.herokuapp.com/api/clientes", requestOptions)
+        fetch("https://api-imobiliaria.herokuapp.com/api/clientes", requestOptions)
         .then(response => {
             if (response.status == 200) {
                 ClienteView.aceito(this.campo_envia)
