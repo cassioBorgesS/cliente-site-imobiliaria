@@ -39,12 +39,16 @@
     </header>
     <main class="main-login">
         <form>
-            <input type="email" name="login" id="email-login" placeholder="login">
+            <input type="text" name="login" id="email-login" placeholder="login">
             <input type="password" name="senha" id="senha-login" placeholder="senha">
-            <div>
-                <button type="submit">Enviar</button>
+            <div id="botao-login">
+                <button type="submit" onclick="controller.realizaLogin(event)">Enviar</button>
             </div>
         </form>
     </main>
+    <script src="../js/controlador/LoginController.js"></script>
+    <script src="../js/modelo/Login.js"></script>
+    <script src="../js/view/ViewForms.js"></script>
+    <script>let controller = new LoginController()</script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-class ClienteView{
+class ViewForms{
     constructor(){
         throw new Error('classe View não pode ser instanciada')
     }
@@ -25,10 +25,10 @@ class ClienteView{
             contador++
         },333)
     }  
-    static aceito(elemento){
-        elemento.innerHTML = `<p class="aceito">Cliente adicionado com sucesso</p>`
+    static aceito(elemento,texto){
+        elemento.innerHTML = `<p class="aceito">${texto}</p>`
     }
-    static erro(elemento){
-        elemento.innerHTML = `<p class="rejeitado">Não foi possível adicionar</p>`
+    static erro(elemento,texto){
+        elemento.innerHTML = `<p class="rejeitado">${texto}</p>`
     }
 }
