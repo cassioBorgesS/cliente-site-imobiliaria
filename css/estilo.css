@@ -29,6 +29,7 @@ header{
     justify-content: space-between;
     align-items: center;
     background-color: rgb(32, 32, 32);
+    z-index: 1;
 }
 #checkbox{
     display: none
@@ -113,7 +114,7 @@ footer div {
     color: white;
 }
 main{
-    margin-top: 58px;
+    margin-top: 52px;
     display: flex;
     flex-flow: column nowrap;
 }
@@ -128,15 +129,27 @@ main .secao-banner{
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 main .secao-banner .banner{
-    width: 90%;
-    max-width: 950px;
-    margin: 20px 30px;
+    width: 100%;
+    max-height: 70vh;
+    min-height: 40vh;
+    object-fit: cover;
+    object-position: center;
+    transition: opacity 1000ms;
+}
+main .secao-banner div{
+    margin: 0;
+    margin-bottom: -5px;
 }
 main .secao-banner nav{
     display: flex;
     justify-content: center;
+    position: absolute;
+    bottom: 5px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 30px
 }
 main .secao-banner nav .botao-banner{
     background-color: black;
@@ -169,7 +182,9 @@ main .secao-apresentacao p{
 main .secao-apresentacao .imagem-apresentacao{
     width: 270px;
     height: 270px;
-    background-color: rgb(96, 0, 160);
+    object-fit: cover;
+    object-position: center;
+    background-color: rgb(255, 251, 0);
 }
 
 
@@ -366,7 +381,7 @@ main .envie-seu-contato form fieldset{
 }
 main .envie-seu-contato form fieldset  .div-principal{
     width: 50%;
-    min-width: 340px;
+    min-width: 250px;
     margin: 20px 0;
     display: flex;
     align-items: baseline;
@@ -378,9 +393,9 @@ main .envie-seu-contato form fieldset  .div-principal input{
     padding: 8px 10px;
     width: 85%;
     border: 0;
-    box-shadow: 0 0 10px -1px;
+    box-shadow: 0 0 15px -6px;
     border-radius: 20px;
-    margin: 4px auto;
+    margin: 7px auto;
 }
 main .envie-seu-contato form fieldset  .div-principal input:focus{
     background: rgba(255,215,0,0.5);
@@ -415,7 +430,7 @@ main .envie-seu-contato form fieldset  .div-principal .rejeitado {
     width: 90%;
     font-size: 22px;
     border-radius: 25px;
-    margin: 0 auto;
+    margin: 20px auto;
 }
 
 
@@ -509,17 +524,10 @@ main .imovel-anuncio .detalhes-imovel .detalhes-anuncio p {
 
 
 .main-login{
-    margin: 0;
-    display: flex;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-origin: content-box;
 }
 .main-login form{
+    margin-top: 200px;
     display: flex;
     flex-direction: column;
     background-color: rgba(0,0,0, 0.1);
@@ -549,6 +557,25 @@ main .imovel-anuncio .detalhes-imovel .detalhes-anuncio p {
 .main-login form button:hover{
     background-color: rgba(255, 215, 0,0.7);
 }
+.main-login .tabela-contatos-clientes {
+    width: 100%;
+    max-width: 900px;
+    border-collapse: collapse;
+    margin: 130px 20px;
+    margin-bottom: 0px;
+}
+.main-login .tabela-contatos-clientes tr:first-child{
+    border: 1px solid;
+}
+.main-login .tabela-contatos-clientes .elemento-contatos-clientes {
+    text-align: center;
+    padding: 7px 9px;
+    border: 1px solid;
+}
+.main-login .tabela-contatos-clientes .elemento-contatos-clientes-th{
+    background: gold;
+    padding: 10px 0px;
+}
 
 
 
@@ -568,6 +595,16 @@ main .imovel-anuncio .detalhes-imovel .detalhes-anuncio p {
 @media screen and (max-width: 450px){
     header .contatos-header li a p{
         width: 60px;
+    }
+    main .secao-banner .banner{
+        min-height: 50vh;
+    }
+    main .secao-apresentacao .imagem-apresentacao{
+        width: 230px;
+        height: 230px;
+    }
+    main{
+        padding: 0;
     }
 }
 
@@ -602,8 +639,17 @@ main .imovel-anuncio .detalhes-imovel .detalhes-anuncio p {
     background-color: gold;
 }
 
+.imagem-banner{
+    animation: imagem-banner 1s;
+}
+
 
 @keyframes loading{
     25%{transform: translateY(10px)}
     75%{transform: translateY(-10px)}
+}
+
+@keyframes imagem-banner{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
 }

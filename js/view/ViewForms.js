@@ -29,6 +29,9 @@ class ViewForms{
         elemento.innerHTML = `<p class="aceito">${texto}</p>`
     }
     static erro(elemento,texto){
-        elemento.innerHTML = `<p class="rejeitado">${texto}</p>`
+        elemento.innerHTML = `
+            <p class="rejeitado">${texto}</p>
+            <button type="submit" onclick="controlador.adicionaCliente(event)">Enviar</button>
+        `
     }
 }

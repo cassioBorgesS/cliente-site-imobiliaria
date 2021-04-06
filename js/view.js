@@ -1,24 +1,22 @@
 const busca = document.querySelector.bind(document)
 const botoes = [busca('#um'),busca('#dois'),busca('#tres'),busca('#quatro')]
-const listaBaner = [
-    'imagens/background.png',
-    'imagens/background.png',
-    'imagens/background.png',
-    'imagens/background.png'
-]
 const banner = busca('.banner')
 const navBanner = busca('#nav-banner')
 
-let contador = 0
-setInterval(()=>{
+let contador = 1
+banner.onload = e => {
     botoes.forEach(botao => {
         botao.classList.remove('checado')
     })
+    setTimeout(()=>banner.classList.add('imagem-banner') ,5)
     botoes[contador].classList.add('checado')
-    banner.src = listaBaner[contador]
     if(contador == 3) contador = -1
     contador++
-}, 3000)
+}
+setInterval(()=>{
+    banner.classList.remove('imagem-banner')
+    banner.src = `imagens/banner-${contador}.jpg`
+}, 6000)
 
 function mudaBanner(e){
     botoes.forEach(botao => {
@@ -26,5 +24,6 @@ function mudaBanner(e){
     })
     let index = botoes.findIndex(botao => botao.id === e.target.id)
     contador = index
+    banner.src = `imagens/banner-${contador}.jpg`
     e.target.classList.add('checado')
 }

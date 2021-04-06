@@ -7,29 +7,38 @@ class LoginController{
     }
     realizaLogin(event){
         event.preventDefault()
-        var myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
-
-        var raw = JSON.stringify({
+        
+        const raw = JSON.stringify({
             "login":this.campoLogin.value,
-            "senha":this.campoSenha.value});
-
-        var requestOptions = {
-            method: 'POST',
-            headers: myHeaders,
-            body: raw,
-            redirect: 'follow'
-        };
-
-        fetch("http://localhost:3000/api/usuario/login", requestOptions)
-        .then(response => {
-            return response.json()
-        })
-        .then(result => {
-            localStorage.setItem("authorization",result.Authorization)
-            localStorage.setItem("refreshToken",result.refreshToken)
-        })
-        .catch(error => {
+            "senha":this.campoSenha.value
         });
+
+        let xhr = new XMLHttpRequest()
+        xhr.onreadystatechange = function(){
+            console.log(xhr.readyState)
+            if(xhr.readyState === 4){
+                LoginController.buscarContatos()
+                localStorage.setItem("authorization",JSON.parse(xhr.response).Authorization)
+                localStorage.setItem("refreshToken",JSON.parse(xhr.response).refreshToken)
+            }
+        }
+        xhr.open('POST',"https://api-imobiliaria.herokuapp.com/api/usuario/login")
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send(raw)
+    }
+
+    static buscarContatos(){
+        let xhr = new XMLHttpRequest()
+        xhr.onreadystatechange = function(){
+            console.log(xhr.readyState)
+            if(xhr.readyState === 4){
+                ViewLogin.criaTabelas(controller.body,JSON.parse(xhr.response))
+                console.log(JSON.parse(xhr.response))
+            }
+        }
+        xhr.open('GET',"https://api-imobiliaria.herokuapp.com/api/clientes")
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.setRequestHeader("Authorization", `Bearer ${localStorage.authorization}`);
+        xhr.send()
     }
 }
